@@ -10,6 +10,8 @@ const render = require('koa-ejs');
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+const port = process.env.PORT || 8000
+
 app
     .use(serve(__dirname + '../../public'))
 
@@ -99,4 +101,7 @@ router
 
 app
     .use(router.routes())
-    .listen(8000)
+    .listen(port, () => {
+        console.log(`Application is listening on port ${port}`)
+    })
+

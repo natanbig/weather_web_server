@@ -61,10 +61,10 @@ router
                     return reject(data)
                 }
                     forecast(data.coord.lon, data.coord.lat, (error, data) => {
-                        let description = data.weather[0].description
                         if (error) return reject(error.message)
                         let geoData = {
-                            forecast: description,
+                            temperature: data.main.temp,
+                            forecast: data.weather[0].description,
                             location: data.sys.country,
                             address: city
                         }

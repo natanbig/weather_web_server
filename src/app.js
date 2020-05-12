@@ -5,7 +5,6 @@ const app = new Koa();
 const router = new Router()
 const serve = require('koa-static')
 const templatesPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
 const render = require('koa-ejs');
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
